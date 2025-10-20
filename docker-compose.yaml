@@ -1,0 +1,40 @@
+services:
+  terminal:
+    image: sh3b0/terminal:v2
+    container_name: terminal
+    ports: [127.0.0.1:10081:10081]
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - ./zellij.kdl:/home/dev/.config/zellij/config.kdl
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./recordings:/home/dev/recordings
+    networks:
+      - lab_net
+  renderer:
+    image: sh3b0/renderer:v2
+    container_name: renderer
+    ports: [127.0.0.1:10082:10082]
+    restart: unless-stopped
+    volumes:
+      - ./lab1:/opt/renderer/workshop/content
+    depends_on:
+      - terminal
+    networks:
+      - lab_net
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports: [127.0.0.1:8080:8080]
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - renderer
+      - terminal
+    networks:
+      - lab_net
+
+networks:
+  lab_net:
+    name: lab_net
