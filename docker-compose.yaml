@@ -17,7 +17,7 @@ services:
     ports: [127.0.0.1:10082:10082]
     restart: unless-stopped
     volumes:
-      - ./lab1:/opt/renderer/workshop/content
+      - ./lab2:/opt/renderer/workshop/content
     depends_on:
       - terminal
     networks:

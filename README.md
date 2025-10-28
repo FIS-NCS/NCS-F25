@@ -3,6 +3,7 @@
 ## Content
 
 - Lab 1: Security Compliance
+- Lab 2: Threat Modeling
 
 ## Instructions
 
