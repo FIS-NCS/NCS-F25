@@ -1,7 +1,8 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds clear-defaults=true {
     normal {
-
+        bind "Ctrl x" { Copy; }
+        bind "Ctrl l" { Clear; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -292,7 +293,7 @@ copy_command "forwarder.sh" // x11
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
 //
-// copy_on_select false
+copy_on_select false
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
