@@ -5,7 +5,7 @@
 - Lab 1: Security Compliance
 - Lab 2: Threat Modeling
 - Lab 3: Web Security
-- Lab 4: EDR/SIEM
+- Lab 4: Endpoint Security
 - Lab 5: DevSecOps
 
 ## Instructions
