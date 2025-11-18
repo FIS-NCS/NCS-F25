@@ -9,6 +9,7 @@ services:
       - ./zellij.kdl:/home/dev/.config/zellij/config.kdl
       - /var/run/docker.sock:/var/run/docker.sock
       - ./recordings:/home/dev/recordings
+      - ./lab4:/home/dev/workspace
     networks:
       - lab_net
   renderer:
@@ -17,7 +18,7 @@ services:
     ports: [127.0.0.1:10082:10082]
     restart: unless-stopped
     volumes:
-      - ./lab3:/opt/renderer/workshop/content
+      - ./lab4:/opt/renderer/workshop/content
     depends_on:
       - terminal
     networks:

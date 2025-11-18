@@ -4,6 +4,9 @@
 
 - Lab 1: Security Compliance
 - Lab 2: Threat Modeling
+- Lab 3: Web Security
+- Lab 4: EDR/SIEM
+- Lab 5: DevSecOps
 
 ## Instructions
 
@@ -47,14 +50,17 @@
    docker compose pull
    ```
 
-7. Update `docker-compose.yaml` to serve lab files 
+7. Update `docker-compose.yaml` to serve files for lab `X` (i.e., `lab1`, `lab2`, etc.)
 
    ```yaml
    services:
+      terminal:
+        volumes:
+          - ./labX:/home/dev/workspace
       ...
       renderer:
         volumes:
-         - ./<DIR_OF_MD_FILES>:/opt/renderer/workshop/content
+         - ./labX:/opt/renderer/workshop/content
    ```
 
 8. Run the environment

@@ -1,6 +1,8 @@
 solutions/
 windows/
 qemu/
-config/
 *.iso
 *.cast
+*.pem
+*.key
+.env
